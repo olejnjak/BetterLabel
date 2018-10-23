@@ -99,7 +99,7 @@ open class BetterLabel: UIView {
     }
     
     private func updateLabel() {
-        label.numberOfLines = 0
+        label.numberOfLines = numberOfLines
     }
     
     private func updateLayout() {
