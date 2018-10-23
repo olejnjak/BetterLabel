@@ -3,7 +3,7 @@ BetterLabel simplifies setting general styling properties which should normally 
 
 ## Motivation
 
-On iOS it is setting some `UILabel` properties very inconvenient as they can't be set directly on `UILabel` - so we need to use `NSAttributedString`. Let's see an example.
+On iOS is setting some `UILabel` properties very inconvenient as they can't be set directly on `UILabel` - so we need to use `NSAttributedString`. Let's see an example.
 
 Imagine you should create label with custom _font_, _text color_, _alignment_,  _letter spacing_ (_kern_) and custom _line height_. Well then you should create an `NSAttributedString` and set it to the label.
 
