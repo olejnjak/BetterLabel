@@ -16,6 +16,8 @@
 		69C056E0217F88A100372371 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056DF217F88A100372371 /* SnapKit.framework */; };
 		69C056E1217F88AE00372371 /* BetterLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056B7217F7E1C00372371 /* BetterLabel.framework */; };
 		69C056E2217F88AE00372371 /* BetterLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056B7217F7E1C00372371 /* BetterLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		69E80EA42181331400E8A710 /* BetterAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */; };
+		69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA5218133FF00E8A710 /* LabelStyling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +55,10 @@
 		69C056D4217F884C00372371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69C056D7217F884C00372371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		69C056D9217F884C00372371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69C056DD217F886100372371 /* Cartfile.private */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		69C056DD217F886100372371 /* Cartfile.private */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Cartfile.private; sourceTree = "<group>"; };
 		69C056DF217F88A100372371 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterAttributedLabel.swift; sourceTree = "<group>"; };
+		69E80EA5218133FF00E8A710 /* LabelStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyling.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,9 @@
 		69C056B9217F7E1C00372371 /* BetterLabel */ = {
 			isa = PBXGroup;
 			children = (
+				69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */,
 				69C056C3217F7E4500372371 /* BetterLabel.swift */,
+				69E80EA5218133FF00E8A710 /* LabelStyling.swift */,
 				69C056C2217F7E2B00372371 /* Supporting files */,
 			);
 			path = BetterLabel;
@@ -293,7 +299,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69E80EA42181331400E8A710 /* BetterAttributedLabel.swift in Sources */,
 				69C056C4217F7E4500372371 /* BetterLabel.swift in Sources */,
+				69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,40 +1,19 @@
 //
-//  BetterLabel.swift
+//  BetterAttributedLabel.swift
 //  BetterLabel
 //
-//  Created by Jakub Olejník on 23/10/2018.
+//  Created by Jakub Olejník on 25/10/2018.
 //  Copyright © 2018 Jakub Olejník. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-open class BetterLabel: UIView {
+open class BetterAttributedLabel: UIView {
     open var text = "" {
         didSet { updateAttributedString() }
     }
     
-    open var font = UIFont.preferredFont(forTextStyle: .body) {
-        didSet {
-            updateAttributedString()
-        }
-    }
-    
-    open var textColor = UIColor.black {
-        didSet {
-            updateAttributedString()
-        }
-    }
-    
-    open var textAlignment = NSTextAlignment.natural {
-        didSet { updateAttributedString() }
-    }
-    
-    
-    open var lineHeight: CGFloat? = nil {
-        didSet { updateAttributedString() }
-    }
-    
-    open var kern: CGFloat? = nil {
+    open var attributes = [NSAttributedString.Key: Any]() {
         didSet { updateAttributedString() }
     }
     
@@ -44,7 +23,7 @@ open class BetterLabel: UIView {
         }
     }
     
-    private weak var label: BetterAttributedLabel!
+    private weak var label: UILabel!
     private var leadingConstraint: NSLayoutConstraint!
     private var trailingConstraint: NSLayoutConstraint!
     private var topConstraint: NSLayoutConstraint!
@@ -55,7 +34,7 @@ open class BetterLabel: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
-        let label = BetterAttributedLabel()
+        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         leadingConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor)
@@ -73,25 +52,7 @@ open class BetterLabel: UIView {
     // MARK: Private helpers
     
     private func updateAttributedString() {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = textAlignment
-        
-        if let lineHeight = lineHeight {
-            paragraphStyle.minimumLineHeight = lineHeight
-            paragraphStyle.maximumLineHeight = lineHeight
-        }
-        
-        var attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: textColor,
-            .paragraphStyle: paragraphStyle
-        ]
-        
-        if let kern = kern {
-            attributes[.kern] = kern
-        }
-        
-        label.attributes = attributes
+        label.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
     
     private func updateLayout() {
@@ -103,7 +64,7 @@ open class BetterLabel: UIView {
     }
 }
 
-extension BetterLabel: LabelStyling {
+extension BetterAttributedLabel: LabelStyling {
     open var lineBreakMode: NSLineBreakMode {
         get { return label.lineBreakMode }
         set { label.lineBreakMode = newValue }
@@ -144,3 +105,4 @@ extension BetterLabel: LabelStyling {
         set { label.isUserInteractionEnabled = newValue }
     }
 }
+
