@@ -51,3 +51,17 @@ betterLabel.contentInset = UIEdgeInsets(top: 15, left: 5, bottom: 10, right: 12)
 ```
 
 That's nice right? 😃
+
+## Attributed label
+
+Well `BetterLabel` itself has shortcuts for the most commonly used properties from `NSAttributedString`, but that might not be enought for your case. That's why `BetterAttributedLabel` exists. You just set the `attributes` property and later on the text and you're good to go.
+
+```swift
+betterAttributedLabel.attributes = [
+    .font: .systemFont(ofSize: 10),
+    .foregroundColor: UIColor.red
+]
+betterAttributedLabel.text = "That's how it's done with BetterAttributedLabel 😎"
+```
+
+That should be all that is needed 🙂
