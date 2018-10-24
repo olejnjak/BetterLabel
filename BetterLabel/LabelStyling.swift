@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol LabelStyling {
+internal protocol LabelStyling {
     var lineBreakMode: NSLineBreakMode { get }
     var isEnabled: Bool { get }
     var adjustsFontSizeToFitWidth: Bool { get }
