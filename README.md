@@ -65,3 +65,7 @@ betterAttributedLabel.text = "That's how it's done with BetterAttributedLabel ðŸ
 ```
 
 That should be all that is needed ðŸ™‚
+
+## What is not a good use case
+
+If you need to display one string with different styles, that's not the purpose of `BetterLabel` and you should use common `UILabel`. The reason for this is that I think that combining `String` and `NSAttributedString` into single label component is a bit confusing.
