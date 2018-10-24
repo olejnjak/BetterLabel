@@ -25,10 +25,6 @@ open class BetterLabel: UIView {
         }
     }
     
-    open var numberOfLines = 1 {
-        didSet { updateLabel() }
-    }
-    
     open var textAlignment = NSTextAlignment.natural {
         didSet { updateAttributedString() }
     }
@@ -98,15 +94,53 @@ open class BetterLabel: UIView {
         label.attributedText = NSAttributedString(string: text, attributes: attributes)
     }
     
-    private func updateLabel() {
-        label.numberOfLines = numberOfLines
-    }
-    
     private func updateLayout() {
         leadingConstraint.constant = contentInset.left
         trailingConstraint.constant = -contentInset.right
         topConstraint.constant = contentInset.top
         bottomConstraint.constant = -contentInset.bottom
         layoutIfNeeded()
+    }
+}
+
+extension BetterLabel {
+    open var lineBreakMode: NSLineBreakMode {
+        get { return label.lineBreakMode }
+        set { label.lineBreakMode = newValue }
+    }
+    
+    open var isEnabled: Bool {
+        get { return label.isEnabled }
+        set { label.isEnabled = newValue }
+    }
+    
+    open var adjustsFontSizeToFitWidth: Bool {
+        get { return label.adjustsFontSizeToFitWidth }
+        set { label.adjustsFontSizeToFitWidth = newValue }
+    }
+    
+    open var allowsDefaultTighteningForTruncation: Bool {
+        get { return label.allowsDefaultTighteningForTruncation }
+        set { label.allowsDefaultTighteningForTruncation = newValue }
+    }
+    
+    open var baselineAdjustment: UIBaselineAdjustment {
+        get { return label.baselineAdjustment }
+        set { label.baselineAdjustment = newValue }
+    }
+    
+    open var minimumScaleFactor: CGFloat {
+        get { return label.minimumScaleFactor }
+        set { label.minimumScaleFactor = newValue }
+    }
+    
+    open var numberOfLines: Int {
+        get { return label.numberOfLines }
+        set { label.numberOfLines = newValue }
+    }
+    
+    override open var isUserInteractionEnabled: Bool {
+        get { return label.isUserInteractionEnabled }
+        set { label.isUserInteractionEnabled = newValue }
     }
 }
