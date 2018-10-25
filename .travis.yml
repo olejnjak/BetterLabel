@@ -1,0 +1,7 @@
+osx_image: xcode10
+language: objective-c
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+script:
+- carthage build --no-skip-current --platform iOS --cache-builds
