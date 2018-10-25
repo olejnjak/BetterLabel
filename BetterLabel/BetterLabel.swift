@@ -9,10 +9,6 @@
 import UIKit
 
 open class BetterLabel: UIView {
-    open var text = "" {
-        didSet { updateAttributedString() }
-    }
-    
     open var font = UIFont.preferredFont(forTextStyle: .body) {
         didSet {
             updateAttributedString()
@@ -38,17 +34,7 @@ open class BetterLabel: UIView {
         didSet { updateAttributedString() }
     }
     
-    open var contentInset = UIEdgeInsets.zero {
-        didSet {
-            updateLayout()
-        }
-    }
-    
-    private weak var label: BetterAttributedLabel!
-    private var leadingConstraint: NSLayoutConstraint!
-    private var trailingConstraint: NSLayoutConstraint!
-    private var topConstraint: NSLayoutConstraint!
-    private var bottomConstraint: NSLayoutConstraint!
+    internal weak var label: BetterAttributedLabel!
     
     // MARK: Initializers
     
@@ -58,11 +44,12 @@ open class BetterLabel: UIView {
         let label = BetterAttributedLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
-        leadingConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor)
-        trailingConstraint = label.trailingAnchor.constraint(equalTo: trailingAnchor)
-        topConstraint = label.topAnchor.constraint(equalTo: topAnchor)
-        bottomConstraint = label.bottomAnchor.constraint(equalTo: bottomAnchor)
-        NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: leadingAnchor),
+            label.trailingAnchor.constraint(equalTo: trailingAnchor),
+            label.topAnchor.constraint(equalTo: topAnchor),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
         self.label = label
     }
     
@@ -92,14 +79,6 @@ open class BetterLabel: UIView {
         }
         
         label.attributes = attributes
-    }
-    
-    private func updateLayout() {
-        leadingConstraint.constant = contentInset.left
-        trailingConstraint.constant = -contentInset.right
-        topConstraint.constant = contentInset.top
-        bottomConstraint.constant = -contentInset.bottom
-        layoutIfNeeded()
     }
 }
 
@@ -137,6 +116,16 @@ extension BetterLabel: LabelStyling {
     open var numberOfLines: Int {
         get { return label.numberOfLines }
         set { label.numberOfLines = newValue }
+    }
+    
+    open var text: String {
+        get { return label.text }
+        set { label.text = newValue }
+    }
+    
+    open var contentInset: UIEdgeInsets {
+        get { return label.contentInset }
+        set { label.contentInset = newValue }
     }
     
     override open var isUserInteractionEnabled: Bool {

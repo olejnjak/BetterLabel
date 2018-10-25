@@ -23,7 +23,7 @@ open class BetterAttributedLabel: UIView {
         }
     }
     
-    private weak var label: UILabel!
+    internal weak var label: UILabel!
     private var leadingConstraint: NSLayoutConstraint!
     private var trailingConstraint: NSLayoutConstraint!
     private var topConstraint: NSLayoutConstraint!
