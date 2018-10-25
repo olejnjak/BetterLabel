@@ -18,10 +18,19 @@
 		69C056E2217F88AE00372371 /* BetterLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056B7217F7E1C00372371 /* BetterLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69E80EA42181331400E8A710 /* BetterAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */; };
 		69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA5218133FF00E8A710 /* LabelStyling.swift */; };
+		69E80EAE2181CEC700E8A710 /* BetterLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */; };
+		69E80EB02181CEC700E8A710 /* BetterLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056B7217F7E1C00372371 /* BetterLabel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		69C056E3217F88AE00372371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69C056AE217F7E1C00372371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69C056B6217F7E1C00372371;
+			remoteInfo = BetterLabel;
+		};
+		69E80EB12181CEC700E8A710 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69C056AE217F7E1C00372371 /* Project object */;
 			proxyType = 1;
@@ -59,6 +68,9 @@
 		69C056DF217F88A100372371 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterAttributedLabel.swift; sourceTree = "<group>"; };
 		69E80EA5218133FF00E8A710 /* LabelStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyling.swift; sourceTree = "<group>"; };
+		69E80EAB2181CEC600E8A710 /* BetterLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterLabelTests.swift; sourceTree = "<group>"; };
+		69E80EAF2181CEC700E8A710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69E80EA82181CEC600E8A710 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E80EB02181CEC700E8A710 /* BetterLabel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,6 +107,7 @@
 				69C056DD217F886100372371 /* Cartfile.private */,
 				69C056B9217F7E1C00372371 /* BetterLabel */,
 				69C056CC217F884B00372371 /* BetterLabelExample */,
+				69E80EAC2181CEC700E8A710 /* BetterLabelTests */,
 				69C056B8217F7E1C00372371 /* Products */,
 				69C056DE217F88A100372371 /* Frameworks */,
 			);
@@ -97,6 +118,7 @@
 			children = (
 				69C056B7217F7E1C00372371 /* BetterLabel.framework */,
 				69C056CB217F884B00372371 /* BetterLabelExample.app */,
+				69E80EAB2181CEC600E8A710 /* BetterLabelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +187,23 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		69E80EAC2181CEC700E8A710 /* BetterLabelTests */ = {
+			isa = PBXGroup;
+			children = (
+				69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */,
+				69E80EB62181CF0600E8A710 /* Supporting files */,
+			);
+			path = BetterLabelTests;
+			sourceTree = "<group>";
+		};
+		69E80EB62181CF0600E8A710 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				69E80EAF2181CEC700E8A710 /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -217,6 +256,24 @@
 			productReference = 69C056CB217F884B00372371 /* BetterLabelExample.app */;
 			productType = "com.apple.product-type.application";
 		};
+		69E80EAA2181CEC600E8A710 /* BetterLabelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69E80EB32181CEC700E8A710 /* Build configuration list for PBXNativeTarget "BetterLabelTests" */;
+			buildPhases = (
+				69E80EA72181CEC600E8A710 /* Sources */,
+				69E80EA82181CEC600E8A710 /* Frameworks */,
+				69E80EA92181CEC600E8A710 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69E80EB22181CEC700E8A710 /* PBXTargetDependency */,
+			);
+			name = BetterLabelTests;
+			productName = BetterLabelTests;
+			productReference = 69E80EAB2181CEC600E8A710 /* BetterLabelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -232,6 +289,9 @@
 						LastSwiftMigration = 1000;
 					};
 					69C056CA217F884B00372371 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					69E80EAA2181CEC600E8A710 = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
@@ -251,6 +311,7 @@
 			targets = (
 				69C056B6217F7E1C00372371 /* BetterLabel */,
 				69C056CA217F884B00372371 /* BetterLabelExample */,
+				69E80EAA2181CEC600E8A710 /* BetterLabelTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,6 +330,13 @@
 			files = (
 				69C056D8217F884C00372371 /* LaunchScreen.storyboard in Resources */,
 				69C056D5217F884C00372371 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69E80EA92181CEC600E8A710 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +382,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69E80EA72181CEC600E8A710 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69E80EAE2181CEC700E8A710 /* BetterLabelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -321,6 +397,11 @@
 			isa = PBXTargetDependency;
 			target = 69C056B6217F7E1C00372371 /* BetterLabel */;
 			targetProxy = 69C056E3217F88AE00372371 /* PBXContainerItemProxy */;
+		};
+		69E80EB22181CEC700E8A710 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69C056B6217F7E1C00372371 /* BetterLabel */;
+			targetProxy = 69E80EB12181CEC700E8A710 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -563,6 +644,46 @@
 			};
 			name = Release;
 		};
+		69E80EB42181CEC700E8A710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "BetterLabelTests/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.olejnjak.BetterLabelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69E80EB52181CEC700E8A710 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "BetterLabelTests/Supporting files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cz.olejnjak.BetterLabelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,6 +710,15 @@
 			buildConfigurations = (
 				69C056DB217F884C00372371 /* Debug */,
 				69C056DC217F884C00372371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69E80EB32181CEC700E8A710 /* Build configuration list for PBXNativeTarget "BetterLabelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69E80EB42181CEC700E8A710 /* Debug */,
+				69E80EB52181CEC700E8A710 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
