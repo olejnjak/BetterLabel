@@ -13,6 +13,7 @@ before_deploy:
 - carthage archive $FRAMEWORK_NAME
 script:
 - carthage build --no-skip-current --platform iOS --cache-builds
+- pod lib lint
 deploy:
   provider: releases
   api_key:
@@ -22,3 +23,5 @@ deploy:
   on:
     repo: olejnjak/BetterLabel
     tags: true
+after_deploy:
+- pod trunk push
