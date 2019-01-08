@@ -34,7 +34,10 @@ open class BetterAttributedLabel: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
+        isUserInteractionEnabled = false
+        
         let label = UILabel()
+        label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         leadingConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor)
@@ -98,11 +101,6 @@ extension BetterAttributedLabel: LabelStyling {
     open var numberOfLines: Int {
         get { return label.numberOfLines }
         set { label.numberOfLines = newValue }
-    }
-    
-    override open var isUserInteractionEnabled: Bool {
-        get { return label.isUserInteractionEnabled }
-        set { label.isUserInteractionEnabled = newValue }
     }
 }
 

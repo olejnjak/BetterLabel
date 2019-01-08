@@ -41,6 +41,8 @@ open class BetterLabel: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
+        isUserInteractionEnabled = false
+        
         let label = BetterAttributedLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
@@ -126,10 +128,5 @@ extension BetterLabel: LabelStyling {
     open var contentInset: UIEdgeInsets {
         get { return label.contentInset }
         set { label.contentInset = newValue }
-    }
-    
-    override open var isUserInteractionEnabled: Bool {
-        get { return label.isUserInteractionEnabled }
-        set { label.isUserInteractionEnabled = newValue }
     }
 }
