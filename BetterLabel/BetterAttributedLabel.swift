@@ -41,9 +41,13 @@ open class BetterAttributedLabel: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         leadingConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor)
+        leadingConstraint.priority = UILayoutPriority(rawValue: 999)
         trailingConstraint = label.trailingAnchor.constraint(equalTo: trailingAnchor)
+        trailingConstraint.priority = UILayoutPriority(rawValue: 999)
         topConstraint = label.topAnchor.constraint(equalTo: topAnchor)
+        topConstraint.priority = UILayoutPriority(rawValue: 999)
         bottomConstraint = label.bottomAnchor.constraint(equalTo: bottomAnchor)
+        bottomConstraint.priority = UILayoutPriority(rawValue: 999)
         NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
         self.label = label
     }
