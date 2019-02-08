@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'BetterLabel'
-    s.version          = '0.1.2'
+    s.version          = '0.1.3'
     s.summary          = 'Simplify styling of UILabel'
     s.description      = <<-DESC
     BetterLabel simplifies setting general styling properties which should normally be handled by NSAttributedString
