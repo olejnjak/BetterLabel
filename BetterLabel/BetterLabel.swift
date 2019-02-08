@@ -33,6 +33,16 @@ open class BetterLabel: UIView {
     open var kern: CGFloat? = nil {
         didSet { updateAttributedString() }
     }
+
+    open override func setContentCompressionResistancePriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        super.setContentCompressionResistancePriority(priority, for: axis)
+        label.setContentCompressionResistancePriority(priority, for: axis)
+    }
+
+    open override func setContentHuggingPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        super.setContentHuggingPriority(priority, for: axis)
+        label.setContentHuggingPriority(priority, for: axis)
+    }
     
     internal weak var label: BetterAttributedLabel!
     
