@@ -54,7 +54,7 @@ That's nice right? 😃
 
 ## Attributed label
 
-Well `BetterLabel` itself has shortcuts for the most commonly used properties from `NSAttributedString`, but that might not be enought for your case. That's why `BetterAttributedLabel` exists. You just set the `attributes` property and later on the text and you're good to go.
+Well `BetterLabel` itself has shortcuts for the most commonly used properties from `NSAttributedString`, but that might not be enough for your case. That's why `BetterAttributedLabel` exists. You just set the `attributes` property and later on the text and you're good to go.
 
 ```swift
 betterAttributedLabel.attributes = [
