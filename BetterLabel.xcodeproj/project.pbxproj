@@ -45,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		69463C15225D01500022BA69 /* BetterLabel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = BetterLabel.podspec; sourceTree = "<group>"; };
 		69C056B7217F7E1C00372371 /* BetterLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BetterLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C056BA217F7E1C00372371 /* BetterLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetterLabel.h; sourceTree = "<group>"; };
 		69C056BB217F7E1C00372371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		69C056AD217F7E1C00372371 = {
 			isa = PBXGroup;
 			children = (
+				69463C15225D01500022BA69 /* BetterLabel.podspec */,
 				69C056DD217F886100372371 /* Cartfile.private */,
 				69C056B9217F7E1C00372371 /* BetterLabel */,
 				69C056CC217F884B00372371 /* BetterLabelExample */,
