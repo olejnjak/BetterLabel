@@ -33,15 +33,13 @@ open class BetterLabel: UIView {
     open var kern: CGFloat? = nil {
         didSet { updateAttributedString() }
     }
-
-    open override func setContentCompressionResistancePriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
-        super.setContentCompressionResistancePriority(priority, for: axis)
-        label.setContentCompressionResistancePriority(priority, for: axis)
+    
+    open override var forFirstBaselineLayout: UIView {
+        return label
     }
-
-    open override func setContentHuggingPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
-        super.setContentHuggingPriority(priority, for: axis)
-        label.setContentHuggingPriority(priority, for: axis)
+    
+    open override var forLastBaselineLayout: UIView {
+        return label
     }
     
     internal weak var label: BetterAttributedLabel!
@@ -67,6 +65,18 @@ open class BetterLabel: UIView {
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: View override
+    
+    open override func setContentCompressionResistancePriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        super.setContentCompressionResistancePriority(priority, for: axis)
+        label.setContentCompressionResistancePriority(priority, for: axis)
+    }
+    
+    open override func setContentHuggingPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        super.setContentHuggingPriority(priority, for: axis)
+        label.setContentHuggingPriority(priority, for: axis)
     }
     
     // MARK: Private helpers
