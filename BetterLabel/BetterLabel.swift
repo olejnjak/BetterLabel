@@ -35,11 +35,11 @@ open class BetterLabel: UIView {
     }
     
     open override var forFirstBaselineLayout: UIView {
-        return label
+        return label.forFirstBaselineLayout
     }
     
     open override var forLastBaselineLayout: UIView {
-        return label
+        return label.forLastBaselineLayout
     }
     
     internal weak var label: BetterAttributedLabel!
