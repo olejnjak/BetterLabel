@@ -34,6 +34,10 @@ open class BetterLabel: UIView {
         didSet { updateAttributedString() }
     }
     
+    open var lineSpacing: CGFloat? = nil {
+        didSet { updateAttributedString() }
+    }
+    
     open override var forFirstBaselineLayout: UIView {
         return label.forFirstBaselineLayout
     }
@@ -88,6 +92,10 @@ open class BetterLabel: UIView {
         if let lineHeight = lineHeight {
             paragraphStyle.minimumLineHeight = lineHeight
             paragraphStyle.maximumLineHeight = lineHeight
+        }
+        
+        if let lineSpacing = lineSpacing {
+            paragraphStyle.lineSpacing = lineSpacing
         }
         
         var attributes: [NSAttributedString.Key: Any] = [
