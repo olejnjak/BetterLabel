@@ -79,7 +79,7 @@ open class BetterAttributedLabel: UIView {
     // MARK: Private helpers
     
     private func updateAttributedString() {
-        label.attributedText = NSAttributedString(string: text, attributes: attributes)
+        label.attributedText = attributedText
     }
     
     private func updateLayout() {
@@ -128,3 +128,8 @@ extension BetterAttributedLabel: LabelStyling {
     }
 }
 
+extension BetterAttributedLabel {
+    open var attributedText: NSAttributedString {
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+}
