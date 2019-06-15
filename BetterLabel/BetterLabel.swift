@@ -158,3 +158,9 @@ extension BetterLabel: LabelStyling {
         set { label.contentInset = newValue }
     }
 }
+
+extension BetterLabel {
+    open var attributedText: NSAttributedString {
+        return label.attributedText
+    }
+}
