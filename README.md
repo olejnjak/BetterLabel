@@ -82,6 +82,15 @@ betterAttributedLabel.text = "That's how it's done with BetterAttributedLabel �
 
 That should be all that is needed 🙂
 
+## UIButton extension
+
+To make a `BetterLabel` even better, you can set an attributed title of `UIButton` using `BetterLabel`. 🎉
+
+```swift
+let button = UIButton(type: .system)
+button.setBetterLabel(betterLabel, for: .normal)
+```
+
 ## What is not a good use case
 
 If you need to display one string with different styles, that's not the purpose of `BetterLabel` and you should use common `UILabel`. The reason for this is that I think that combining `String` and `NSAttributedString` into single label component is a bit confusing.
