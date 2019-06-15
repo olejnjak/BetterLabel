@@ -18,6 +18,7 @@
 		69C056E2217F88AE00372371 /* BetterLabel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056B7217F7E1C00372371 /* BetterLabel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69E80EA42181331400E8A710 /* BetterAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */; };
 		69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA5218133FF00E8A710 /* LabelStyling.swift */; };
+		A3F97F6522B507AC00053925 /* UIButton+BetterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		69C056DF217F88A100372371 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterAttributedLabel.swift; sourceTree = "<group>"; };
 		69E80EA5218133FF00E8A710 /* LabelStyling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStyling.swift; sourceTree = "<group>"; };
+		A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BetterLabel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */,
 				69C056C3217F7E4500372371 /* BetterLabel.swift */,
 				69E80EA5218133FF00E8A710 /* LabelStyling.swift */,
+				A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */,
 				69C056C2217F7E2B00372371 /* Supporting files */,
 			);
 			path = BetterLabel;
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F97F6522B507AC00053925 /* UIButton+BetterLabel.swift in Sources */,
 				69E80EA42181331400E8A710 /* BetterAttributedLabel.swift in Sources */,
 				69C056C4217F7E4500372371 /* BetterLabel.swift in Sources */,
 				69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */,
