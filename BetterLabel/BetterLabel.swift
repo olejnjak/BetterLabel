@@ -34,12 +34,26 @@ open class BetterLabel: UIView {
         didSet { updateAttributedString() }
     }
     
+    open var lineSpacing: CGFloat? = nil {
+        didSet { updateAttributedString() }
+    }
+    
+    open override var forFirstBaselineLayout: UIView {
+        return label.forFirstBaselineLayout
+    }
+    
+    open override var forLastBaselineLayout: UIView {
+        return label.forLastBaselineLayout
+    }
+    
     internal weak var label: BetterAttributedLabel!
     
     // MARK: Initializers
     
     public override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        isUserInteractionEnabled = false
         
         let label = BetterAttributedLabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +71,18 @@ open class BetterLabel: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: View override
+    
+    open override func setContentCompressionResistancePriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        super.setContentCompressionResistancePriority(priority, for: axis)
+        label.setContentCompressionResistancePriority(priority, for: axis)
+    }
+    
+    open override func setContentHuggingPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        super.setContentHuggingPriority(priority, for: axis)
+        label.setContentHuggingPriority(priority, for: axis)
+    }
+    
     // MARK: Private helpers
     
     private func updateAttributedString() {
@@ -66,6 +92,10 @@ open class BetterLabel: UIView {
         if let lineHeight = lineHeight {
             paragraphStyle.minimumLineHeight = lineHeight
             paragraphStyle.maximumLineHeight = lineHeight
+        }
+        
+        if let lineSpacing = lineSpacing {
+            paragraphStyle.lineSpacing = lineSpacing
         }
         
         var attributes: [NSAttributedString.Key: Any] = [
@@ -127,9 +157,10 @@ extension BetterLabel: LabelStyling {
         get { return label.contentInset }
         set { label.contentInset = newValue }
     }
-    
-    override open var isUserInteractionEnabled: Bool {
-        get { return label.isUserInteractionEnabled }
-        set { label.isUserInteractionEnabled = newValue }
+}
+
+extension BetterLabel {
+    open var attributedText: NSAttributedString {
+        return label.attributedText
     }
 }

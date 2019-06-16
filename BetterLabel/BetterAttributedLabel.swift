@@ -23,6 +23,14 @@ open class BetterAttributedLabel: UIView {
         }
     }
     
+    open override var forFirstBaselineLayout: UIView {
+        return label
+    }
+    
+    open override var forLastBaselineLayout: UIView {
+        return label
+    }
+    
     internal weak var label: UILabel!
     private var leadingConstraint: NSLayoutConstraint!
     private var trailingConstraint: NSLayoutConstraint!
@@ -34,13 +42,20 @@ open class BetterAttributedLabel: UIView {
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
+        isUserInteractionEnabled = false
+        
         let label = UILabel()
+        label.isUserInteractionEnabled = false
         label.translatesAutoresizingMaskIntoConstraints = false
         addSubview(label)
         leadingConstraint = label.leadingAnchor.constraint(equalTo: leadingAnchor)
+        leadingConstraint.priority = UILayoutPriority(rawValue: 999)
         trailingConstraint = label.trailingAnchor.constraint(equalTo: trailingAnchor)
+        trailingConstraint.priority = UILayoutPriority(rawValue: 999)
         topConstraint = label.topAnchor.constraint(equalTo: topAnchor)
+        topConstraint.priority = UILayoutPriority(rawValue: 999)
         bottomConstraint = label.bottomAnchor.constraint(equalTo: bottomAnchor)
+        bottomConstraint.priority = UILayoutPriority(rawValue: 999)
         NSLayoutConstraint.activate([leadingConstraint, trailingConstraint, topConstraint, bottomConstraint])
         self.label = label
     }
@@ -49,10 +64,22 @@ open class BetterAttributedLabel: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: View override
+    
+    open override func setContentCompressionResistancePriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        super.setContentCompressionResistancePriority(priority, for: axis)
+        label.setContentCompressionResistancePriority(priority, for: axis)
+    }
+    
+    open override func setContentHuggingPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
+        super.setContentHuggingPriority(priority, for: axis)
+        label.setContentHuggingPriority(priority, for: axis)
+    }
+    
     // MARK: Private helpers
     
     private func updateAttributedString() {
-        label.attributedText = NSAttributedString(string: text, attributes: attributes)
+        label.attributedText = attributedText
     }
     
     private func updateLayout() {
@@ -99,10 +126,10 @@ extension BetterAttributedLabel: LabelStyling {
         get { return label.numberOfLines }
         set { label.numberOfLines = newValue }
     }
-    
-    override open var isUserInteractionEnabled: Bool {
-        get { return label.isUserInteractionEnabled }
-        set { label.isUserInteractionEnabled = newValue }
-    }
 }
 
+extension BetterAttributedLabel {
+    open var attributedText: NSAttributedString {
+        return NSAttributedString(string: text, attributes: attributes)
+    }
+}

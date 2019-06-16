@@ -20,6 +20,7 @@
 		69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA5218133FF00E8A710 /* LabelStyling.swift */; };
 		69E80EAE2181CEC700E8A710 /* BetterLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */; };
 		69E80EB02181CEC700E8A710 /* BetterLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056B7217F7E1C00372371 /* BetterLabel.framework */; };
+		A3F97F6522B507AC00053925 /* UIButton+BetterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		69463C15225D01500022BA69 /* BetterLabel.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = BetterLabel.podspec; sourceTree = "<group>"; };
 		69C056B7217F7E1C00372371 /* BetterLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BetterLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69C056BA217F7E1C00372371 /* BetterLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BetterLabel.h; sourceTree = "<group>"; };
 		69C056BB217F7E1C00372371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		69E80EAB2181CEC600E8A710 /* BetterLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterLabelTests.swift; sourceTree = "<group>"; };
 		69E80EAF2181CEC700E8A710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BetterLabel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,7 @@
 		69C056AD217F7E1C00372371 = {
 			isa = PBXGroup;
 			children = (
+				69463C15225D01500022BA69 /* BetterLabel.podspec */,
 				69C056DD217F886100372371 /* Cartfile.private */,
 				69C056B9217F7E1C00372371 /* BetterLabel */,
 				69C056CC217F884B00372371 /* BetterLabelExample */,
@@ -129,6 +133,7 @@
 				69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */,
 				69C056C3217F7E4500372371 /* BetterLabel.swift */,
 				69E80EA5218133FF00E8A710 /* LabelStyling.swift */,
+				A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */,
 				69C056C2217F7E2B00372371 /* Supporting files */,
 			);
 			path = BetterLabel;
@@ -367,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F97F6522B507AC00053925 /* UIButton+BetterLabel.swift in Sources */,
 				69E80EA42181331400E8A710 /* BetterAttributedLabel.swift in Sources */,
 				69C056C4217F7E4500372371 /* BetterLabel.swift in Sources */,
 				69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */,
@@ -476,6 +482,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -533,6 +540,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -562,7 +570,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -589,7 +596,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -614,7 +620,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.olejnjak.BetterLabelExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -639,7 +644,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cz.olejnjak.BetterLabelExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

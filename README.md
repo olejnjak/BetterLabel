@@ -1,4 +1,20 @@
-# BetterLabel
+<p align="center">
+    <img src="Logo.png" width="480” max-width="90%" alt="BetterLabel" />
+</p>
+
+<p align="center">
+    <img src="https://travis-ci.com/olejnjak/BetterLabel.svg?branch=master" alt="Travis CI build status">
+    <a href="https://http://cocoapods.org/pods/BetterLabel">
+        <img src="https://img.shields.io/cocoapods/v/BetterLabel.svg?style=flat)](http://cocoapods.org/pods/BetterLabel" alt="BetterLabel">
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/carthage-compatible-brightgreen.svg?style=flat" alt="Carthage" />
+    </a>
+    <a href="https://twitter.com/olejnjak">
+        <img src="https://img.shields.io/badge/twitter-@olejnjak-blue.svg?style=flat" alt="Twitter" />
+    </a>
+</p>
+
 BetterLabel simplifies setting general styling properties which should normally be handled by `NSAttributedString`.
 
 ## Motivation
@@ -54,7 +70,7 @@ That's nice right? 😃
 
 ## Attributed label
 
-Well `BetterLabel` itself has shortcuts for the most commonly used properties from `NSAttributedString`, but that might not be enought for your case. That's why `BetterAttributedLabel` exists. You just set the `attributes` property and later on the text and you're good to go.
+Well `BetterLabel` itself has shortcuts for the most commonly used properties from `NSAttributedString`, but that might not be enough for your case. That's why `BetterAttributedLabel` exists. You just set the `attributes` property and later on the text and you're good to go.
 
 ```swift
 betterAttributedLabel.attributes = [
@@ -65,6 +81,15 @@ betterAttributedLabel.text = "That's how it's done with BetterAttributedLabel �
 ```
 
 That should be all that is needed 🙂
+
+## UIButton extension
+
+To make a `BetterLabel` even better, you can set an attributed title of `UIButton` using `BetterLabel`. 🎉
+
+```swift
+let button = UIButton(type: .system)
+button.setBetterLabel(betterLabel, for: .normal)
+```
 
 ## What is not a good use case
 
