@@ -7,9 +7,9 @@
 //
 
 import XCTest
+@testable import BetterLabel
 
-class BetterLabelTests: XCTestCase {
-    
+final class BetterLabelTests: XCTestCase {
     private var label: BetterLabel!
     
     override func setUp() {
@@ -117,5 +117,4 @@ class BetterLabelTests: XCTestCase {
     private func loadAttribute(_ attribute: NSAttributedString.Key) -> Any? {
         return label.attributedText.attribute(attribute, at: 0, effectiveRange: nil)
     }
-
 }

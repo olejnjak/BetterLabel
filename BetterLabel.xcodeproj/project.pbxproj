@@ -20,9 +20,6 @@
 		69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA5218133FF00E8A710 /* LabelStyling.swift */; };
 		69E80EAE2181CEC700E8A710 /* BetterLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */; };
 		69E80EB02181CEC700E8A710 /* BetterLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056B7217F7E1C00372371 /* BetterLabel.framework */; };
-		A37B5CEC22B6C89000C3BD38 /* BetterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C056C3217F7E4500372371 /* BetterLabel.swift */; };
-		A37B5CED22B6C8E900C3BD38 /* BetterAttributedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA32181331400E8A710 /* BetterAttributedLabel.swift */; };
-		A37B5CEE22B6C8FB00C3BD38 /* LabelStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA5218133FF00E8A710 /* LabelStyling.swift */; };
 		A3F97F6522B507AC00053925 /* UIButton+BetterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -396,10 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A37B5CEC22B6C89000C3BD38 /* BetterLabel.swift in Sources */,
 				69E80EAE2181CEC700E8A710 /* BetterLabelTests.swift in Sources */,
-				A37B5CED22B6C8E900C3BD38 /* BetterAttributedLabel.swift in Sources */,
-				A37B5CEE22B6C8FB00C3BD38 /* LabelStyling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
