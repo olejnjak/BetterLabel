@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton {
-    func setBetterLabel(_ label: BetterLabel, for state: UIControl.State) {
+    public func setBetterLabel(_ label: BetterLabel, for state: UIControl.State) {
         setAttributedTitle(label.attributedText, for: state)
     }
 }
