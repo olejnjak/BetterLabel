@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "1020"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "69C056B6217F7E1C00372371"
-               BuildableName = "BetterLabel.framework"
-               BlueprintName = "BetterLabel"
+               BlueprintIdentifier = "69C056CA217F884B00372371"
+               BuildableName = "BetterLabelExample.app"
+               BlueprintName = "BetterLabelExample"
                ReferencedContainer = "container:BetterLabel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69C056B6217F7E1C00372371"
-            BuildableName = "BetterLabel.framework"
-            BlueprintName = "BetterLabel"
+            BlueprintIdentifier = "69C056CA217F884B00372371"
+            BuildableName = "BetterLabelExample.app"
+            BlueprintName = "BetterLabelExample"
             ReferencedContainer = "container:BetterLabel.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,15 +61,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69C056B6217F7E1C00372371"
-            BuildableName = "BetterLabel.framework"
-            BlueprintName = "BetterLabel"
+            BlueprintIdentifier = "69C056CA217F884B00372371"
+            BuildableName = "BetterLabelExample.app"
+            BlueprintName = "BetterLabelExample"
             ReferencedContainer = "container:BetterLabel.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +80,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "69C056B6217F7E1C00372371"
-            BuildableName = "BetterLabel.framework"
-            BlueprintName = "BetterLabel"
+            BlueprintIdentifier = "69C056CA217F884B00372371"
+            BuildableName = "BetterLabelExample.app"
+            BlueprintName = "BetterLabelExample"
             ReferencedContainer = "container:BetterLabel.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

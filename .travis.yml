@@ -10,9 +10,10 @@ before_install:
 - brew update
 - brew outdated carthage || brew upgrade carthage
 before_deploy:
+- carthage build --no-skip-current --platform iOS --cache-builds
 - carthage archive $FRAMEWORK_NAME
 script:
-- carthage build --no-skip-current --platform iOS --cache-builds
+- set -o pipefail && xcodebuild test -scheme BetterLabel -destination 'platform=iOS Simulator,name=iPhone XS Max,OS=12.2' ONLY_ACTIVE_ARCH=YES | xcpretty
 - pod lib lint
 deploy:
   provider: releases
