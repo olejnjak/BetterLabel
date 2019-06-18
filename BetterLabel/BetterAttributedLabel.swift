@@ -6,7 +6,7 @@
 //  Copyright © 2018 Jakub Olejník. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 open class BetterAttributedLabel: UIView {
     open var text = "" {
