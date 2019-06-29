@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import BetterLabel
+import BetterLabel
 
 final class BetterLabelTests: XCTestCase {
     private var label: BetterLabel!

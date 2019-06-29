@@ -20,6 +20,7 @@
 		69E80EA6218133FF00E8A710 /* LabelStyling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EA5218133FF00E8A710 /* LabelStyling.swift */; };
 		69E80EAE2181CEC700E8A710 /* BetterLabelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */; };
 		69E80EB02181CEC700E8A710 /* BetterLabel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C056B7217F7E1C00372371 /* BetterLabel.framework */; };
+		A36AC22422B8F0B200B21369 /* UIButtonExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36AC22322B8F0B200B21369 /* UIButtonExtensionTests.swift */; };
 		A3F97F6522B507AC00053925 /* UIButton+BetterLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		69E80EAB2181CEC600E8A710 /* BetterLabelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BetterLabelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterLabelTests.swift; sourceTree = "<group>"; };
 		69E80EAF2181CEC700E8A710 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A36AC22322B8F0B200B21369 /* UIButtonExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtensionTests.swift; sourceTree = "<group>"; };
 		A3F97F6422B507AC00053925 /* UIButton+BetterLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BetterLabel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				69E80EAD2181CEC700E8A710 /* BetterLabelTests.swift */,
+				A36AC22322B8F0B200B21369 /* UIButtonExtensionTests.swift */,
 				69E80EB62181CF0600E8A710 /* Supporting files */,
 			);
 			path = BetterLabelTests;
@@ -394,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69E80EAE2181CEC700E8A710 /* BetterLabelTests.swift in Sources */,
+				A36AC22422B8F0B200B21369 /* UIButtonExtensionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

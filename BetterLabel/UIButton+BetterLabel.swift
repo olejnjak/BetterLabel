@@ -11,5 +11,15 @@ import UIKit
 extension UIButton {
     public func setBetterLabel(_ label: BetterLabel, for state: UIControl.State) {
         setAttributedTitle(label.attributedText, for: state)
+
+        titleLabel?.lineBreakMode = label.lineBreakMode
+        titleLabel?.isEnabled = label.isEnabled
+        titleLabel?.adjustsFontSizeToFitWidth = label.adjustsFontSizeToFitWidth
+        titleLabel?.allowsDefaultTighteningForTruncation = label.allowsDefaultTighteningForTruncation
+        titleLabel?.baselineAdjustment = label.baselineAdjustment
+        titleLabel?.minimumScaleFactor = label.minimumScaleFactor
+        titleLabel?.numberOfLines = label.numberOfLines
+        
+        contentEdgeInsets = label.contentInset
     }
 }
