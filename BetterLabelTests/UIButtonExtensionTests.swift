@@ -15,6 +15,4 @@ final class UIButtonExtensionTests: XCTestCase {
         let button = UIButton()
         button.setBetterLabel(label, for: .normal)
     }
-    
-    
 }
