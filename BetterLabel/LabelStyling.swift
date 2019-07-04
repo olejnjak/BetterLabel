@@ -9,14 +9,14 @@
 import UIKit
 
 internal protocol LabelStyling {
-    var lineBreakMode: NSLineBreakMode { get }
-    var isEnabled: Bool { get }
     var adjustsFontSizeToFitWidth: Bool { get }
     var allowsDefaultTighteningForTruncation: Bool { get }
     var baselineAdjustment: UIBaselineAdjustment { get }
+    var contentInset: UIEdgeInsets { get }
+    var isEnabled: Bool { get }
+    var isUserInteractionEnabled: Bool { get }
+    var lineBreakMode: NSLineBreakMode { get }
     var minimumScaleFactor: CGFloat { get }
     var numberOfLines: Int { get }
-    var isUserInteractionEnabled: Bool { get }
     var text: String { get }
-    var contentInset: UIEdgeInsets { get }
 }
