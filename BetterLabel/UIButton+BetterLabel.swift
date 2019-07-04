@@ -12,6 +12,9 @@ extension UIButton {
     public func setBetterLabel(_ label: BetterLabel, for state: UIControl.State) {
         setAttributedTitle(label.attributedText, for: state)
 
+        if #available(iOS 10.0, *) {
+            titleLabel?.adjustsFontForContentSizeCategory = label.adjustsFontForContentSizeCategory
+        }
         titleLabel?.lineBreakMode = label.lineBreakMode
         titleLabel?.isEnabled = label.isEnabled
         titleLabel?.adjustsFontSizeToFitWidth = label.adjustsFontSizeToFitWidth
