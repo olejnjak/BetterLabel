@@ -11,6 +11,10 @@ import BetterLabel
 
 final class BetterLabelTests: XCTestCase {
     private var label: BetterLabel!
+    private var underlyingLabel: UILabel! {
+        // we know that first subview is `BetterAttributedLabel`
+        return label.subviews[0].subviews.compactMap { $0 as? UILabel }[0]
+    }
     
     override func setUp() {
         super.setUp()
@@ -110,6 +114,15 @@ final class BetterLabelTests: XCTestCase {
         label.text = "Lorem ipsum"
         let attributedText = label.attributedText
         XCTAssertEqual(attributedText.string, "Lorem ipsum")
+    }
+    
+    func testDefaultAdjustsFontForContentSizeCategoryIsFalse() {
+        XCTAssertFalse(underlyingLabel.adjustsFontForContentSizeCategory)
+    }
+    
+    func testAdjustsFontForContentSizeCategory() {
+        label.adjustsFontForContentSizeCategory = true
+        XCTAssertTrue(underlyingLabel.adjustsFontForContentSizeCategory)
     }
     
     // MARK: - Helpers
