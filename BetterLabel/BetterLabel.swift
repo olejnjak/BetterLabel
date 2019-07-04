@@ -113,6 +113,12 @@ open class BetterLabel: UIView {
 }
 
 extension BetterLabel: LabelStyling {
+    @available(iOS 10.0, *)
+    open var adjustsFontForContentSizeCategory: Bool {
+        get { return label.adjustsFontForContentSizeCategory }
+        set { label.adjustsFontForContentSizeCategory = newValue }
+    }
+    
     open var lineBreakMode: NSLineBreakMode {
         get { return label.lineBreakMode }
         set { label.lineBreakMode = newValue }
