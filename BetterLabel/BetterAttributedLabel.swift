@@ -100,7 +100,10 @@ extension BetterAttributedLabel: LabelStyling {
     
     open var lineBreakMode: NSLineBreakMode {
         get { return label.lineBreakMode }
-        set { label.lineBreakMode = newValue }
+        set {
+            label.lineBreakMode = newValue
+            updateAttributedString()
+        }
     }
     
     open var isEnabled: Bool {

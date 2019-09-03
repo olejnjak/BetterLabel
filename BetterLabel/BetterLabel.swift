@@ -38,6 +38,14 @@ open class BetterLabel: UIView {
         didSet { updateAttributedString() }
     }
     
+    open var lineBreakMode: NSLineBreakMode {
+        get { return label.lineBreakMode }
+        set {
+            label.lineBreakMode = newValue
+            updateAttributedString()
+        }
+    }
+    
     open override var forFirstBaselineLayout: UIView {
         return label.forFirstBaselineLayout
     }
@@ -88,6 +96,7 @@ open class BetterLabel: UIView {
     private func updateAttributedString() {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = textAlignment
+        paragraphStyle.lineBreakMode = label.lineBreakMode
         
         if let lineHeight = lineHeight {
             paragraphStyle.minimumLineHeight = lineHeight
@@ -117,11 +126,6 @@ extension BetterLabel: LabelStyling {
     open var adjustsFontForContentSizeCategory: Bool {
         get { return label.adjustsFontForContentSizeCategory }
         set { label.adjustsFontForContentSizeCategory = newValue }
-    }
-    
-    open var lineBreakMode: NSLineBreakMode {
-        get { return label.lineBreakMode }
-        set { label.lineBreakMode = newValue }
     }
     
     open var isEnabled: Bool {
