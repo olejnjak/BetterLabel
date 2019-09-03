@@ -38,14 +38,6 @@ open class BetterLabel: UIView {
         didSet { updateAttributedString() }
     }
     
-    open var lineBreakMode: NSLineBreakMode {
-        get { return label.lineBreakMode }
-        set {
-            label.lineBreakMode = newValue
-            updateAttributedString()
-        }
-    }
-    
     open override var forFirstBaselineLayout: UIView {
         return label.forFirstBaselineLayout
     }
@@ -126,6 +118,14 @@ extension BetterLabel: LabelStyling {
     open var adjustsFontForContentSizeCategory: Bool {
         get { return label.adjustsFontForContentSizeCategory }
         set { label.adjustsFontForContentSizeCategory = newValue }
+    }
+    
+    open var lineBreakMode: NSLineBreakMode {
+        get { return label.lineBreakMode }
+        set {
+            label.lineBreakMode = newValue
+            updateAttributedString()
+        }
     }
     
     open var isEnabled: Bool {
