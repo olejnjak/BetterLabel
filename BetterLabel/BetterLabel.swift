@@ -88,6 +88,7 @@ open class BetterLabel: UIView {
     private func updateAttributedString() {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = textAlignment
+        paragraphStyle.lineBreakMode = label.lineBreakMode
         
         if let lineHeight = lineHeight {
             paragraphStyle.minimumLineHeight = lineHeight
@@ -121,7 +122,10 @@ extension BetterLabel: LabelStyling {
     
     open var lineBreakMode: NSLineBreakMode {
         get { return label.lineBreakMode }
-        set { label.lineBreakMode = newValue }
+        set {
+            label.lineBreakMode = newValue
+            updateAttributedString()
+        }
     }
     
     open var isEnabled: Bool {

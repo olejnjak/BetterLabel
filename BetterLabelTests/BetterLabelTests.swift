@@ -110,6 +110,15 @@ final class BetterLabelTests: XCTestCase {
         XCTAssertEqual(lineSpacing, 0)
     }
     
+    func testLineBreakMode() {
+        label.lineBreakMode = .byTruncatingMiddle
+        label.lineSpacing = 10
+        
+        let paragraphStyle = loadAttribute(.paragraphStyle) as? NSParagraphStyle
+        let lineBreakMode = paragraphStyle?.lineBreakMode
+        XCTAssertEqual(lineBreakMode, .byTruncatingMiddle)
+    }
+    
     func testText() {
         label.text = "Lorem ipsum"
         let attributedText = label.attributedText
