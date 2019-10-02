@@ -9,8 +9,22 @@
 import UIKit
 
 open class BetterLabel: UIView {
+    private enum AssociatedKeys {
+        static var fontMetrics = UInt8(0)
+        static var automaticallyAdjustsFontForContentSizeCategory = UInt8(1)
+    }
+    
     open var font = UIFont.preferredFont(forTextStyle: .body) {
         didSet {
+            updateAttributedString()
+        }
+    }
+    
+    @available(iOS 11.0, *)
+    open var fontMetrics: UIFontMetrics? {
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.fontMetrics) as? UIFontMetrics }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.fontMetrics, newValue, .OBJC_ASSOCIATION_RETAIN)
             updateAttributedString()
         }
     }
@@ -46,11 +60,32 @@ open class BetterLabel: UIView {
         return label.forLastBaselineLayout
     }
     
+    @available(iOS 11.0, *)
+    open var automaticallyAdjustsFontForContentSizeCategory: Bool {
+        get { return objc_getAssociatedObject(self, &AssociatedKeys.automaticallyAdjustsFontForContentSizeCategory) as? Bool ?? false }
+        set {
+            guard automaticallyAdjustsFontForContentSizeCategory != newValue else { return }
+            objc_setAssociatedObject(self, &AssociatedKeys.automaticallyAdjustsFontForContentSizeCategory, newValue, .OBJC_ASSOCIATION_RETAIN)
+            
+            // triggers `updateAttributedString()` so we do not need to call it explicitly
+            adjustsFontForContentSizeCategory = newValue
+            
+            if newValue {
+                observeContentSizeCategoryChange()
+            } else {
+                stopObservingContentSizeCategoryChange()
+            }
+        }
+    }
+    
     internal weak var label: BetterAttributedLabel!
+    
+    private let notificationCenter: NotificationCenter
     
     // MARK: Initializers
     
-    public override init(frame: CGRect) {
+    public init(frame: CGRect = .zero, notificationCenter: NotificationCenter = .default) {
+        self.notificationCenter = notificationCenter
         super.init(frame: frame)
         
         isUserInteractionEnabled = false
@@ -69,6 +104,10 @@ open class BetterLabel: UIView {
     
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    deinit {
+        stopObservingContentSizeCategoryChange()
     }
     
     // MARK: View override
@@ -91,16 +130,16 @@ open class BetterLabel: UIView {
         paragraphStyle.lineBreakMode = label.lineBreakMode
         
         if let lineHeight = lineHeight {
-            paragraphStyle.minimumLineHeight = lineHeight
-            paragraphStyle.maximumLineHeight = lineHeight
+            paragraphStyle.minimumLineHeight = scale(value: lineHeight)
+            paragraphStyle.maximumLineHeight = scale(value: lineHeight)
         }
         
         if let lineSpacing = lineSpacing {
-            paragraphStyle.lineSpacing = lineSpacing
+            paragraphStyle.lineSpacing = scale(value: lineSpacing)
         }
         
         var attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
+            .font: scale(font: font),
             .foregroundColor: textColor,
             .paragraphStyle: paragraphStyle
         ]
@@ -111,10 +150,47 @@ open class BetterLabel: UIView {
         
         label.attributes = attributes
     }
+    
+    private func scale(value: CGFloat) -> CGFloat {
+        let adjustedValue: CGFloat?
+        
+        if #available(iOS 11.0, *) {
+            adjustedValue = adjustsFontForContentSizeCategory ? fontMetrics?.scaledValue(for: value) : value
+        } else {
+            adjustedValue = value
+        }
+        
+        return adjustedValue ?? value
+    }
+    
+    private func scale(font: UIFont) -> UIFont {
+        let adjustedValue: UIFont?
+        
+        if #available(iOS 11.0, *) {
+            adjustedValue = adjustsFontForContentSizeCategory ? fontMetrics?.scaledFont(for: font) : font
+        } else {
+            adjustedValue = font
+        }
+        
+        return adjustedValue ?? font
+    }
+    
+    private func observeContentSizeCategoryChange() {
+        notificationCenter.addObserver(self, selector: #selector(contentSizeCategoryChanged), name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
+    
+    private func stopObservingContentSizeCategoryChange() {
+        notificationCenter.removeObserver(self, name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
+    
+    @objc
+    private func contentSizeCategoryChanged() {
+        updateAttributedString()
+    }
 }
 
 extension BetterLabel: LabelStyling {
-    @available(iOS 10.0, *)
+    @available(iOS 11.0, *)
     open var adjustsFontForContentSizeCategory: Bool {
         get { return label.adjustsFontForContentSizeCategory }
         set { label.adjustsFontForContentSizeCategory = newValue }

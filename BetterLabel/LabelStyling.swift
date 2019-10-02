@@ -9,7 +9,7 @@
 import UIKit
 
 internal protocol LabelStyling {
-    @available(iOS 10.0, *)
+    @available(iOS 11.0, *)
     var adjustsFontForContentSizeCategory: Bool { get }
     var adjustsFontSizeToFitWidth: Bool { get }
     var allowsDefaultTighteningForTruncation: Bool { get }
