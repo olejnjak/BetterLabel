@@ -29,7 +29,7 @@ open class BetterLabel: UIView {
         }
     }
     
-    open var textColor = UIColor.black {
+    open var textColor: UIColor? {
         didSet {
             updateAttributedString()
         }
@@ -140,9 +140,12 @@ open class BetterLabel: UIView {
         
         var attributes: [NSAttributedString.Key: Any] = [
             .font: scale(font: font),
-            .foregroundColor: textColor,
             .paragraphStyle: paragraphStyle
         ]
+        
+        if let textColor = textColor {
+            attributes[.foregroundColor] = textColor
+        }
         
         if let kern = kern {
             attributes[.kern] = kern
