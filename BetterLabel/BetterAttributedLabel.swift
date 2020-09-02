@@ -71,7 +71,11 @@ open class BetterAttributedLabel: UIView {
     }
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
-        label.sizeThatFits(size)
+        let textSize = label.sizeThatFits(size)
+        return CGSize(
+            width: textSize.width + contentInset.left + contentInset.right,
+            height: textSize.height + contentInset.top + contentInset.bottom
+        )
     }
     
     // MARK: Private helpers
