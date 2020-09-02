@@ -18,18 +18,12 @@ open class BetterAttributedLabel: UIView {
     }
     
     open var contentInset = UIEdgeInsets.zero {
-        didSet {
-            updateLayout()
-        }
+        didSet { updateLayout() }
     }
     
-    open override var forFirstBaselineLayout: UIView {
-        return label
-    }
+    open override var forFirstBaselineLayout: UIView { label }
     
-    open override var forLastBaselineLayout: UIView {
-        return label
-    }
+    open override var forLastBaselineLayout: UIView { label }
     
     internal weak var label: UILabel!
     private var leadingConstraint: NSLayoutConstraint!
@@ -74,6 +68,14 @@ open class BetterAttributedLabel: UIView {
     open override func setContentHuggingPriority(_ priority: UILayoutPriority, for axis: NSLayoutConstraint.Axis) {
         super.setContentHuggingPriority(priority, for: axis)
         label.setContentHuggingPriority(priority, for: axis)
+    }
+    
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let textSize = label.sizeThatFits(size)
+        return CGSize(
+            width: textSize.width + contentInset.left + contentInset.right,
+            height: textSize.height + contentInset.top + contentInset.bottom
+        )
     }
     
     // MARK: Private helpers
@@ -138,7 +140,5 @@ extension BetterAttributedLabel: LabelStyling {
 }
 
 extension BetterAttributedLabel {
-    open var attributedText: NSAttributedString {
-        return NSAttributedString(string: text, attributes: attributes)
-    }
+    open var attributedText: NSAttributedString { NSAttributedString(string: text, attributes: attributes) }
 }
