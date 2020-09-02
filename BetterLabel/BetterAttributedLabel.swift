@@ -18,18 +18,12 @@ open class BetterAttributedLabel: UIView {
     }
     
     open var contentInset = UIEdgeInsets.zero {
-        didSet {
-            updateLayout()
-        }
+        didSet { updateLayout() }
     }
     
-    open override var forFirstBaselineLayout: UIView {
-        return label
-    }
+    open override var forFirstBaselineLayout: UIView { label }
     
-    open override var forLastBaselineLayout: UIView {
-        return label
-    }
+    open override var forLastBaselineLayout: UIView { label }
     
     internal weak var label: UILabel!
     private var leadingConstraint: NSLayoutConstraint!
@@ -142,7 +136,5 @@ extension BetterAttributedLabel: LabelStyling {
 }
 
 extension BetterAttributedLabel {
-    open var attributedText: NSAttributedString {
-        return NSAttributedString(string: text, attributes: attributes)
-    }
+    open var attributedText: NSAttributedString { NSAttributedString(string: text, attributes: attributes) }
 }

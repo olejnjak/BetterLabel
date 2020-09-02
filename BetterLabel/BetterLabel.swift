@@ -15,9 +15,7 @@ open class BetterLabel: UIView {
     }
     
     open var font = UIFont.preferredFont(forTextStyle: .body) {
-        didSet {
-            updateAttributedString()
-        }
+        didSet { updateAttributedString() }
     }
     
     @available(iOS 11.0, *)
@@ -30,15 +28,12 @@ open class BetterLabel: UIView {
     }
     
     open var textColor: UIColor? {
-        didSet {
-            updateAttributedString()
-        }
+        didSet { updateAttributedString() }
     }
     
     open var textAlignment = NSTextAlignment.natural {
         didSet { updateAttributedString() }
     }
-    
     
     open var lineHeight: CGFloat? = nil {
         didSet { updateAttributedString() }
@@ -52,13 +47,8 @@ open class BetterLabel: UIView {
         didSet { updateAttributedString() }
     }
     
-    open override var forFirstBaselineLayout: UIView {
-        return label.forFirstBaselineLayout
-    }
-    
-    open override var forLastBaselineLayout: UIView {
-        return label.forLastBaselineLayout
-    }
+    open override var forFirstBaselineLayout: UIView { label.forFirstBaselineLayout }
+    open override var forLastBaselineLayout: UIView { label.forLastBaselineLayout }
     
     @available(iOS 11.0, *)
     open var automaticallyAdjustsFontForContentSizeCategory: Bool {
@@ -253,7 +243,5 @@ extension BetterLabel: LabelStyling {
 }
 
 extension BetterLabel {
-    open var attributedText: NSAttributedString {
-        return label.attributedText
-    }
+    open var attributedText: NSAttributedString { label.attributedText }
 }
