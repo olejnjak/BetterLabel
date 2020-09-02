@@ -76,6 +76,10 @@ open class BetterAttributedLabel: UIView {
         label.setContentHuggingPriority(priority, for: axis)
     }
     
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        label.sizeThatFits(size)
+    }
+    
     // MARK: Private helpers
     
     private func updateAttributedString() {
