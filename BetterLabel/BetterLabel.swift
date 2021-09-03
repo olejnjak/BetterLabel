@@ -46,7 +46,12 @@ open class BetterLabel: UIView {
     open var lineSpacing: CGFloat? = nil {
         didSet { updateAttributedString() }
     }
-    
+
+    open override var backgroundColor: UIColor? {
+        get { label.backgroundColor }
+        set { label.backgroundColor = newValue }
+    }
+
     open override var forFirstBaselineLayout: UIView { label.forFirstBaselineLayout }
     open override var forLastBaselineLayout: UIView { label.forLastBaselineLayout }
     
