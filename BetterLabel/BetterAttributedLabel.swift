@@ -20,7 +20,15 @@ open class BetterAttributedLabel: UIView {
     open var contentInset = UIEdgeInsets.zero {
         didSet { updateLayout() }
     }
-    
+
+    open override var backgroundColor: UIColor? {
+        get { super.backgroundColor }
+        set {
+            super.backgroundColor = newValue
+            label.backgroundColor = newValue
+        }
+    }
+
     open override var forFirstBaselineLayout: UIView { label }
     
     open override var forLastBaselineLayout: UIView { label }
