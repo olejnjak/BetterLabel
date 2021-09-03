@@ -22,9 +22,9 @@ open class BetterAttributedLabel: UIView {
     }
 
     open override var backgroundColor: UIColor? {
-        get { self.backgroundColor }
+        get { super.backgroundColor }
         set {
-            self.backgroundColor = newValue
+            super.backgroundColor = newValue
             label.backgroundColor = newValue
         }
     }
