@@ -1,4 +1,0 @@
-# For Carthage support we need to make sure that xcodeproj is contained
-
-swift package generate-xcodeproj 2> /dev/null > /dev/null
-git add BetterLabel.xcodeproj
