@@ -16,6 +16,7 @@ final class UIButtonExtensionTests: XCTestCase {
         button.setBetterLabel(label, for: .normal)
     }
     
+    @available(iOS 10.0, *)
     func testDefaultAdjustsFontForContentSizeCategoryIsFalse() {
         let label = BetterLabel()
         let button = UIButton()
@@ -23,6 +24,7 @@ final class UIButtonExtensionTests: XCTestCase {
         XCTAssertFalse(button.titleLabel!.adjustsFontForContentSizeCategory)
     }
     
+    @available(iOS 11.0, *)
     func testAdjustsFontForContentSizeCategory() {
         let label = BetterLabel()
         label.adjustsFontForContentSizeCategory = true
