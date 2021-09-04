@@ -1,0 +1,29 @@
+name: Tests
+
+on: [pull_request, push]
+
+jobs:
+  tests:
+    name: Run tests
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        # iOS tests still cannot be run using `swift test` so we have to stick with `xcodebuild`
+        run: set -o pipefail && xcodebuild test -scheme BetterLabel -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12 Pro Max,OS=latest' ONLY_ACTIVE_ARCH=YES | xcpretty
+  cocoapods:
+    name: Cocoapods
+    needs: tests
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v2
+      - name: Lint
+        run: pod lib lint
+  carthage:
+    name: Carthage
+    needs: tests
+    runs-on: macos-11
+    steps:
+      - uses: actions/checkout@v2
+      - name: Carthage
+        run: carthage build --no-skip-current --use-xcframeworks

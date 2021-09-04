@@ -10,9 +10,10 @@ let package = Package(
         .library(name: "BetterLabel", targets: ["BetterLabel"]),
     ],
     targets: [
-        .target(name: "BetterLabel", path: "BetterLabel")
-    ],
-    swiftLanguageVersions: [
-        .v5
+        .target(name: "BetterLabel"),
+        .testTarget(
+            name: "BetterLabelTests",
+            dependencies: ["BetterLabel"]
+        ),
     ]
 )

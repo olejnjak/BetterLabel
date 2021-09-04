@@ -125,10 +125,12 @@ final class BetterLabelTests: XCTestCase {
         XCTAssertEqual(attributedText.string, "Lorem ipsum")
     }
     
+    @available(iOS 10.0, *)
     func testDefaultAdjustsFontForContentSizeCategoryIsFalse() {
         XCTAssertFalse(underlyingLabel.adjustsFontForContentSizeCategory)
     }
     
+    @available(iOS 11.0, *)
     func testAdjustsFontForContentSizeCategory() {
         label.adjustsFontForContentSizeCategory = true
         XCTAssertTrue(underlyingLabel.adjustsFontForContentSizeCategory)
